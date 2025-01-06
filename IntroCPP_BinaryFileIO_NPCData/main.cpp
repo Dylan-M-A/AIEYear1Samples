@@ -21,11 +21,13 @@
 
 #include "raylib.h"
 #include "DataFile.h"
+#include <iostream>
 
 int main(int argc, char* argv[])
 {
     // Initialization
     //--------------------------------------------------------------------------------------
+    //makes custom window
     int screenWidth = 800;
     int screenHeight = 450;
 
@@ -51,6 +53,7 @@ int main(int argc, char* argv[])
         // TODO: Update your variables here
         //----------------------------------------------------------------------------------
 
+        //makes use of left arrow key
         if (IsKeyPressed(KEY_LEFT))
         {
             currentRecordIdx--;
@@ -62,12 +65,13 @@ int main(int argc, char* argv[])
             recordTexture = LoadTextureFromImage(currentRecord->image);
         }
 
+        //makes use of right arrow key
         if (IsKeyPressed(KEY_RIGHT))
         {
             currentRecordIdx++;
-            if (currentRecordIdx >= data.GetRecordCount())
+            if (currentRecordIdx > 4)
             {
-                currentRecordIdx = data.GetRecordCount();
+                currentRecordIdx = 4;
             }
             currentRecord = data.GetRecord(currentRecordIdx);
             recordTexture = LoadTextureFromImage(currentRecord->image);
@@ -81,12 +85,18 @@ int main(int argc, char* argv[])
         ClearBackground(RAYWHITE);
 
         DrawTexture(recordTexture, 300, 50, WHITE);
+        int end = currentRecord->name.find('ý');
+        std::cout << end << std::endl;
+
+        //makes sure to print name correctly
+        string othername = currentRecord->name.substr(0, end);
 
         DrawText("NAME", 10, 50, 20, LIGHTGRAY);
-        DrawText(currentRecord->name.c_str(), 10, 80, 20, LIGHTGRAY);
+        DrawText(othername.c_str(), 10, 80, 20, LIGHTGRAY);
 
         DrawText("AGE", 10, 120, 20, LIGHTGRAY);
         DrawText(to_string(currentRecord->age).c_str(), 10, 150, 20, LIGHTGRAY);
+
 
         EndDrawing();
         //----------------------------------------------------------------------------------
