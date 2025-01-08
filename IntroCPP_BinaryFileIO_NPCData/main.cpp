@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
         // TODO: Update your variables here
         //----------------------------------------------------------------------------------
 
-        //makes use of left arrow key
+        //can move left to change identification
         if (IsKeyPressed(KEY_LEFT))
         {
             currentRecordIdx--;
@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
             recordTexture = LoadTextureFromImage(currentRecord->image);
         }
 
-        //makes use of right arrow key
+        //can move to the right to change identification
         if (IsKeyPressed(KEY_RIGHT))
         {
             currentRecordIdx++;
@@ -85,10 +85,11 @@ int main(int argc, char* argv[])
         ClearBackground(RAYWHITE);
 
         DrawTexture(recordTexture, 300, 50, WHITE);
+        //finds the name
         int end = currentRecord->name.find('ý');
         std::cout << end << std::endl;
 
-        //makes sure to print name correctly
+        //writes out name
         string othername = currentRecord->name.substr(0, end);
 
         DrawText("NAME", 10, 50, 20, LIGHTGRAY);
