@@ -1,0 +1,11 @@
+Small development teams might find it hard to translate old code from a different language into a new language. Our team has found it hard to convert some code into c++ from c#.
+
+Some Developers may use code converters in order to help translate the code as needed. It can look at whatever language you wrote in and automaticly rewrite it as needed.
+
+This can be very helpful especially if you are tight on time and need a quick solution to this problem. Not only will it be easy on time, if they decide to write out the code instead of copy and paste, it will help them learn the code better then anything else.
+
+While this can help, it is not a proper solution to the problem and can worsen the status of the code instead of helping. It is also not ideal for learning how to convert code from one language to another.
+
+https://github.com/basechase/OurGame
+https://github.com/basechase/OurGame/commit/08aef6774d2920d276038ad73a1dce5ae1b2596f
+https://github.com/basechase/OurGame/commit/11c7e9742bd1ecc4b3715d4deb0624d50c1c5c1b
