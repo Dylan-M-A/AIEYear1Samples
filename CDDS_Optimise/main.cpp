@@ -78,6 +78,7 @@ int main(int argc, char* argv[])
         //----------------------------------------------------------------------------------
 
         float delta = GetFrameTime();
+        SetTargetFPS(60);
 
         // update the destroyer
         destroyer.Update(delta);
