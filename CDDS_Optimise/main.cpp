@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
-    //SetTargetFPS(60);
+    SetTargetFPS(60);
     //--------------------------------------------------------------------------------------
 
     srand(time(NULL));
